@@ -181,67 +181,6 @@ limitations under the License.
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-shade-plugin</artifactId>
-                <version>${maven.shade.plugin.version}</version>
-                <executions>
-                    <execution>
-                        <id>shade-flink</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>shade</goal>
-                        </goals>
-                        <configuration>
-                            <shadeTestJar>false</shadeTestJar>
-                            <artifactSet>
-                                <includes>
-                                    <!-- Only bundle connector-specific dependencies.
-                                         flink-cdc-base, flink-connector-debezium, and flink-cdc-common
-                                         are provided by the Flink CDC distribution. -->
-                                    <include>io.debezium:debezium-api</include>
-                                    <include>io.debezium:debezium-embedded</include>
-                                    <include>io.debezium:debezium-core</include>
-                                    <include>io.debezium:debezium-connector-kingbase</include>
-                                    <include>com.google.guava:*</include>
-                                    <include>org.apache.kafka:*</include>
-                                    <include>com.fasterxml.*:*</include>
-                                    <include>com.zaxxer:HikariCP</include>
-                                </includes>
-                                <excludes>
-                                    <exclude>org.apache.commons:commons-math3</exclude>
-                                </excludes>
-                            </artifactSet>
-                            <relocations>
-                                <relocation>
-                                    <pattern>org.apache.kafka</pattern>
-                                    <shadedPattern>
-                                        org.apache.flink.cdc.connectors.shaded.org.apache.kafka
-                                    </shadedPattern>
-                                </relocation>
-                                <relocation>
-                                    <pattern>com.fasterxml</pattern>
-                                    <shadedPattern>
-                                        org.apache.flink.cdc.connectors.shaded.com.fasterxml
-                                    </shadedPattern>
-                                </relocation>
-                                <relocation>
-                                    <pattern>com.google</pattern>
-                                    <shadedPattern>
-                                        org.apache.flink.cdc.connectors.shaded.com.google
-                                    </shadedPattern>
-                                </relocation>
-                                <relocation>
-                                    <pattern>com.zaxxer</pattern>
-                                    <shadedPattern>
-                                        org.apache.flink.cdc.connectors.shaded.com.zaxxer
-                                    </shadedPattern>
-                                </relocation>
-                            </relocations>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
                 <executions>
                     <execution>

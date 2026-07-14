@@ -122,3 +122,8 @@ CI test command pattern:
 mvn --no-snapshot-updates -B -DskipTests -pl <all-needed-modules> -am install && \
 mvn --no-snapshot-updates -B -pl <test-module> -DspecifiedFlinkVersion=<version> -DspecifiedParallelism=<1|4> -Duser.timezone=<random> verify
 ```
+Flink 官方不支持kingbase连接器，现在我已基本完成自定义连接器的开发：
+[pipeline模块](flink-cdc-connect/flink-cdc-pipeline-connectors/flink-cdc-pipeline-connector-kingbase) 和 [flink sql模块](flink-cdc-connect/flink-cdc-source-connectors/flink-connector-kingbase-cdc)
+现在处于使用调试阶段，请帮我排查并解决问题
+
+编译使用jdk8进行编译：/d/myserver/jdk-1.8.251
