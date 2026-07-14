@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <p align="center">
   <a href="https://nightlies.apache.org/flink/flink-cdc-docs-stable/"><img src="docs/static/fig/flinkcdc-logo.png" alt="Flink CDC" style="width: 375px;"></a>
 </p>
@@ -148,3 +149,7 @@ Thanks to all contributors for their enthusiastic contributions.
 <a href="https://github.com/apache/flink-cdc/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=apache/flink-cdc"/>
 </a>
+=======
+# flink-cdc
+基于开源，新增kingbase连接器
+>>>>>>> 6fa9f03841beb33597df6976b2305f18eb2b8c2a
